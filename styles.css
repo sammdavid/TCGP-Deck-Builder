@@ -33,6 +33,7 @@ body {
     background: transparent;
     margin: 0 0 40px 0;
     padding: 60px 40px;
+    border-radius: 10px;
 }
 
 .hero-background {
@@ -41,23 +42,22 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: visible;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0;
 }
 
 .trainer-slide {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    bottom: -460px;
+    right: -50px;
     height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    padding-right: 0;
-    padding-bottom: 5%;
-    overflow: hidden;
+    width: auto;
 }
 
 .trainer-slide.active {
@@ -65,17 +65,22 @@ body {
 }
 
 .trainer-image {
-    height: 90%;
+    height: 200%;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 0 40px rgba(255, 0, 85, 0.4));
+    object-position: bottom;
+    filter: drop-shadow(0 0 30px rgba(255, 0, 85, 0.3));
     animation: float 6s ease-in-out infinite;
-    display: block;
+    transform-origin: bottom center;
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    0%, 100% { 
+        transform: translateY(0px);
+    }
+    50% { 
+        transform: translateY(-15px);
+    }
 }
 
 .trainer-badge {
@@ -113,12 +118,14 @@ body {
     max-width: 600px;
     padding: 0;
     margin-right: auto;
+    margin-left: 0;
 }
 
 .hero-title {
     font-size: 2.5rem;
     margin-bottom: 20px;
     text-shadow: 0 0 30px rgba(255, 0, 85, 0.8);
+    text-align: left;
 }
 
 .title-main {
@@ -144,6 +151,10 @@ body {
     margin-top: 5px;
 }
 
+.title-main, .title-sub, .title-tertiary {
+    text-align: left;
+}
+
 .hero-cta {
     background: linear-gradient(135deg, #ff0055 0%, #ff3366 100%);
     color: white;
@@ -166,31 +177,6 @@ body {
 .hero-cta:active {
     transform: translateY(4px);
     box-shadow: 0 2px 0 #990033, 0 5px 15px rgba(255, 0, 85, 0.3);
-}
-
-.slide-indicators {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 3;
-}
-
-.indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 2px solid #00ccff;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.indicator.active {
-    background: #00ccff;
-    box-shadow: 0 0 10px #00ccff;
 }
 
 /* Deck Builder Section */
@@ -231,7 +217,7 @@ body {
     border-radius: 50%;
     border: 3px solid #333;
     box-shadow: 0 3px 10px rgba(0,0,0,0.7), inset 0 2px 4px rgba(255,255,255,0.1);
-    z-index: 1;
+    z-index: 0;
 }
 
 .deck-info {
@@ -245,7 +231,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .deck-info h2 {
@@ -857,7 +843,6 @@ body::before {
     
     .trainer-image {
         height: 70%;
-        transform: scale(0.8);
     }
     
     .modal-content {

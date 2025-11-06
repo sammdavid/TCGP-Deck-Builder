@@ -216,27 +216,6 @@ async function loadCards() {
     }
 }
 
-// Update the page title and headers to reflect TCGP
-document.addEventListener('DOMContentLoaded', () => {
-    // Update page title
-    document.title = 'Pokémon TCGP Deck Builder';
-    
-    // Update hero section
-    const heroTitle = document.querySelector('.hero h1');
-    if (heroTitle) {
-        heroTitle.textContent = 'Pokémon TCGP Deck Builder';
-    }
-    
-    const heroSubtitle = document.querySelector('.hero p');
-    if (heroSubtitle) {
-        heroSubtitle.textContent = 'Build and theorycraft your perfect TCGP deck';
-    }
-    
-    initializeDeck();
-    loadCards();
-    setupEventListeners();
-});
-
 // Helper function to process cards from a set
 function processCardsFromSet(cards, set, allCardsData) {
     cards.forEach(card => {
