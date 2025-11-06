@@ -628,3 +628,203 @@ function filterCards() {
 
     displayCards(filtered);
 }
+
+// Favorite Decks Data
+// Favorite Decks Data with exact image URLs
+const favoriteDecks = {
+    sylvarina: {
+        name: "Sylvarina EX",
+        type: "Water Sustain",
+        description: "Primarina EX's healing combined with non-EX Primarina and 2 Lillie's makes her an UNSTOPPABLE tank that simply won't die! Sylveon EX turbo-draws cards and stalls with her low retreat cost.",
+        previewImage: "images/primaex.webp",
+        cards: [
+            { name: "Popplio", image: "https://assets.tcgdex.net/en/tcgp/A3/045/low.webp", quantity: 2 },
+            { name: "Primarina ex", image: "https://assets.tcgdex.net/en/tcgp/A3b/088/low.webp", quantity: 2 },
+            { name: "Primarina", image: "https://assets.tcgdex.net/en/tcgp/A3/048/low.webp", quantity: 1 },
+            { name: "Eevee", image: "https://assets.tcgdex.net/en/tcgp/B1/184/low.webp", quantity: 2 },
+            { name: "Sylveon ex", image: "https://assets.tcgdex.net/en/tcgp/A3b/034/low.webp", quantity: 2 },
+            { name: "Poké Ball", image: "https://assets.tcgdex.net/en/tcgp/P-A/005/low.webp", quantity: 2 },
+            { name: "Rare Candy", image: "https://assets.tcgdex.net/en/tcgp/A3/144/low.webp", quantity: 2 },
+            { name: "X Speed", image: "https://assets.tcgdex.net/en/tcgp/P-A/002/low.webp", quantity: 1 },
+            { name: "Professor's Research", image: "https://assets.tcgdex.net/en/tcgp/P-A/007/low.webp", quantity: 2 },
+            { name: "Lillie", image: "https://assets.tcgdex.net/en/tcgp/A3/155/low.webp", quantity: 2 },
+            { name: "Cyrus", image: "https://assets.tcgdex.net/en/tcgp/A2/150/low.webp", quantity: 1 },
+            { name: "Hau", image: "https://assets.tcgdex.net/en/tcgp/A3b/068/low.webp", quantity: 1 }
+        ]
+    },
+    charizardBlaze: {
+        name: "Mega Absol",
+        type: "Dark Control Sustain", 
+        description: "With its low 2-energy attack cost, Mega Absol can dominate the battlefield quickly. It suppresses opponents by preventing them from using Supporter cards while maintaining sustainability through Dusknoir's ability.",
+        previewImage: "images/mega absol.webp",
+        cards: [
+            { name: "Mega Absol ex", image: "https://assets.tcgdex.net/en/tcgp/B1/280/low.webp", quantity: 2 },
+            { name: "Morelull", image: "https://assets.tcgdex.net/en/tcgp/A3a/026/low.webp", quantity: 2 },
+            { name: "Shiinotic", image: "https://assets.tcgdex.net/en/tcgp/A3a/027/low.webp", quantity: 2 },
+            { name: "Duskull", image: "https://assets.tcgdex.net/en/tcgp/B1/103/low.webp", quantity: 2 },
+            { name: "Dusknoir", image: "https://assets.tcgdex.net/en/tcgp/A2/072/low.webp", quantity: 2 },
+            { name: "Poké Ball", image: "https://assets.tcgdex.net/en/tcgp/P-A/005/low.webp", quantity: 2 },
+            { name: "Rare Candy", image: "https://assets.tcgdex.net/en/tcgp/A3/144/low.webp", quantity: 2 },
+            { name: "Giant Cape", image: "https://assets.tcgdex.net/en/tcgp/A2/147/low.webp", quantity: 1 },
+            { name: "Professor's Research", image: "https://assets.tcgdex.net/en/tcgp/P-A/007/low.webp", quantity: 2 },
+            { name: "Cyrus", image: "https://assets.tcgdex.net/en/tcgp/A2/150/low.webp", quantity: 1 },
+            { name: "Leaf", image: "https://assets.tcgdex.net/en/tcgp/A1a/068/low.webp", quantity: 1 },
+            { name: "Lisia", image: "https://assets.tcgdex.net/en/tcgp/B1/226/low.webp", quantity: 1 }
+        ]
+    },
+    pikachuVolt: {
+        name: "Luxray Energy",
+        type: "Electric Infinite Energy",
+        description: "Pikachu EX's lightning-fast attacks combined with Raichu's paralyze lock. Quick setup and energy efficient for early game dominance.",
+        previewImage: "images/luxray.webp", 
+        cards: [
+            { name: "Shinx", image: "https://assets.tcgdex.net/en/tcgp/A2/163/low.webp", quantity: 2 },
+            { name: "Luxio", image: "https://assets.tcgdex.net/en/tcgp/B1/087/low.webp", quantity: 1 },
+            { name: "Luxray", image: "https://assets.tcgdex.net/en/tcgp/A2/060/low.webp", quantity: 1 },
+            { name: "Luxray", image: "https://assets.tcgdex.net/en/tcgp/B1/237/low.webp", quantity: 1 },
+            { name: "Zeraora", image: "https://assets.tcgdex.net/en/tcgp/B1/304/low.webp", quantity: 2 },
+            { name: "Oricorio", image: "https://assets.tcgdex.net/en/tcgp/A3/066/low.webp", quantity: 2 },
+            { name: "Poké Ball", image: "https://assets.tcgdex.net/en/tcgp/P-A/005/low.webp", quantity: 2 },
+            { name: "Rare Candy", image: "https://assets.tcgdex.net/en/tcgp/A3/144/low.webp", quantity: 2 },
+            { name: "Red Card", image: "https://assets.tcgdex.net/en/tcgp/P-A/006/low.webp", quantity: 1 },
+            { name: "Elemental Switch", image: "https://assets.tcgdex.net/en/tcgp/A4/151/low.webp", quantity: 1 },
+            { name: "Professor's Research", image: "https://assets.tcgdex.net/en/tcgp/P-A/007/low.webp", quantity: 2 },
+            { name: "Volkner", image: "https://assets.tcgdex.net/en/tcgp/A2/153/low.webp", quantity: 2 },
+            { name: "Cyrus", image: "https://assets.tcgdex.net/en/tcgp/A2/150/low.webp", quantity: 1 },
+        ]
+    }
+};
+
+// Render Favorite Decks
+function renderFavoriteDecks() {
+    const section = document.getElementById('favoriteDecksSection');
+    if (!section) return;
+    
+    section.innerHTML = `
+        <div class="decks-header">
+            <h2>SAM'S FAVORITE DECKS</h2>
+            <div class="decks-subtitle">Battle-tested and ready to dominate</div>
+        </div>
+        <div class="decks-grid" id="decksGrid"></div>
+    `;
+    
+    const decksGrid = document.getElementById('decksGrid');
+    
+    Object.entries(favoriteDecks).forEach(([deckId, deckData]) => {
+        const deckCard = document.createElement('div');
+        deckCard.className = 'deck-card';
+        deckCard.dataset.deck = deckId;
+        
+        deckCard.innerHTML = `
+            <div class="deck-preview">
+                <div class="deck-image">
+                    <img src="${deckData.previewImage || 'images/primarina.jpg'}" alt="${deckData.name}">
+                </div>
+                <div class="deck-info">
+                    <h3>${deckData.name}</h3>
+                    <span class="deck-type">${deckData.type}</span>
+                    <p>${deckData.description}</p>
+                </div>
+            </div>
+            <div class="decklist-expanded">
+                <!-- Will be populated when expanded -->
+            </div>
+        `;
+        
+        decksGrid.appendChild(deckCard);
+    });
+    
+    setupDeckExpansions();
+}
+
+// Deck Expansion Functions
+function setupDeckExpansions() {
+    document.addEventListener('click', function(e) {
+        const deckCard = e.target.closest('.deck-card');
+        const closeBtn = e.target.closest('.close-decklist');
+        const expandedDeck = e.target.closest('.deck-card.expanded');
+        
+        // Make entire deck card clickable to expand (except close button)
+        if (deckCard && !closeBtn && !e.target.closest('.decklist-expanded')) {
+            e.stopPropagation();
+            expandDeck(deckCard);
+        }
+        
+        if (closeBtn) {
+            e.stopPropagation();
+            const deckCard = closeBtn.closest('.deck-card');
+            collapseDeck(deckCard);
+        }
+        
+        // Close if clicking outside expanded deck
+        if (expandedDeck && !e.target.closest('.decklist-expanded')) {
+            collapseDeck(expandedDeck);
+        }
+    });
+}
+
+function expandDeck(deckCard) {
+    const deckId = deckCard.dataset.deck;
+    const deckData = favoriteDecks[deckId];
+    
+    const decklistHTML = generateDecklistHTML(deckData);
+    const expandedContent = deckCard.querySelector('.decklist-expanded');
+    expandedContent.innerHTML = decklistHTML;
+    
+    // Collapse any other expanded decks
+    document.querySelectorAll('.deck-card.expanded').forEach(card => {
+        if (card !== deckCard) collapseDeck(card);
+    });
+    
+    deckCard.classList.add('expanded');
+    
+    // Images load automatically from the src attribute now!
+}
+function collapseDeck(deckCard) {
+    deckCard.classList.remove('expanded');
+}
+
+function generateDecklistHTML(deckData) {
+    // Create an array with individual card entries
+    const individualCards = [];
+    deckData.cards.forEach(card => {
+        for (let i = 0; i < card.quantity; i++) {
+            individualCards.push({
+                name: card.name,
+                image: card.image // Include the direct image URL
+            });
+        }
+    });
+    
+    return `
+        <div class="decklist-header">
+            <h4>${deckData.name} - Full Decklist</h4>
+            <button class="close-decklist">×</button>
+        </div>
+        <div class="decklist-visual">
+            <div class="deckbox-display">
+                ${individualCards.map(card => `
+                    <div class="deckbox-card-slot" data-card-name="${card.name}">
+                        <img src="${card.image}" alt="${card.name}" class="deckbox-card-image" onerror="handleImageError(this)">
+                        <div class="card-name-fallback">${card.name}</div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+        <div class="decklist-actions">
+            <button class="copy-decklist-btn" onclick="copyDecklist('${deckData.name}')">COPY DECKLIST</button>
+        </div>
+    `;
+}
+
+function handleImageError(img) {
+    img.style.display = 'none';
+    img.nextElementSibling.style.display = 'block';
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderFavoriteDecks);
+} else {
+    renderFavoriteDecks();
+}
